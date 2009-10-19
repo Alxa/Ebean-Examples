@@ -31,12 +31,10 @@
 								<include>**/.ebean*</include>
 							</includes>
 							<followSymlinks>false</followSymlinks>
-
 						</fileset>
 					</filesets>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
 	<dependencies>
