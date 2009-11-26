@@ -31,11 +31,14 @@ public class HelloWorld {
 		if(!(new File("db/howto1.h2.db")).exists()  ){
 			serverConfig.setDdlGenerate(true);
 			serverConfig.setDdlRun(true);
-			serverConfig.addClass(Hello.class);
 		}
-		
+		// add entity
+		serverConfig.addClass(Hello.class);
+			
+		// create server
 		EbeanServer eServer = EbeanServerFactory.create(serverConfig);
 
+		// dealing with data
 		long id = 3;
 		Hello data = eServer.find(Hello.class, id);
 		if (data == null) {
@@ -44,6 +47,8 @@ public class HelloWorld {
 		} else {
 			System.out.println(String.format("############\n%s\n############", data.getMessage()));
 		}
+		// we shouldn't need this see http://groups.google.com/group/ebean/browse_thread/thread/ddbc0eb7f5336ec3
+		// for more information
 		ShutdownManager.shutdown();
 	}
 }
