@@ -47,8 +47,6 @@ public class HelloWorld {
 		} else {
 			System.out.println(String.format("############\n%s\n############", data.getMessage()));
 		}
-		// we shouldn't need this see http://groups.google.com/group/ebean/browse_thread/thread/ddbc0eb7f5336ec3
-		// for more information
-		ShutdownManager.shutdown();
+		
 	}
 }
